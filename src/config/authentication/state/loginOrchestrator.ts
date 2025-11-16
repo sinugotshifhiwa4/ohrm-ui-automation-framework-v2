@@ -30,22 +30,18 @@ export class LoginOrchestrator extends BasePage {
   /**
    * Logs into the portal with valid credentials, and then verifies the success.
    * Saves the current authentication state to a file after successful login.
-   * @param username - The username to log in with.
-   * @param password - The password to log in with.
    * @param loginFn - A function that performs the login action.
    * @param validateLoginFn - A function that validates the success of the login attempt.
    * @returns A promise that resolves when the login attempt has been validated.
    * @throws Error if the login attempt fails.
    */
   public async loginWithValidCredentials(
-    username: string,
-    password: string,
-    loginFn: (username: string, password: string) => Promise<void>,
+    loginFn: () => Promise<void>,
     validateLoginFn: () => Promise<void>,
   ): Promise<void> {
     try {
       await this.navigateToPortal();
-      await loginFn(username, password);
+      await loginFn();
       await validateLoginFn();
       await this.authStatePersister.saveAuthenticationState();
     } catch (error) {
@@ -56,22 +52,18 @@ export class LoginOrchestrator extends BasePage {
 
   /**
    * Logs into the portal with invalid credentials, and then verifies the failure.
-   * @param username - The username to log in with.
-   * @param password - The password to log in with.
    * @param loginFn - A function that performs the login action.
    * @param validateInvalidLoginFn - A function that validates the failure of the login attempt.
    * @returns A promise that resolves when the login attempt has been validated.
    * @throws Error if the login attempt fails.
    */
   public async loginWithInvalidCredentials(
-    username: string,
-    password: string,
-    loginFn: (username: string, password: string) => Promise<void>,
+    loginFn: () => Promise<void>,
     validateInvalidLoginFn: () => Promise<void>,
   ): Promise<void> {
     try {
       await this.navigateToPortal();
-      await loginFn(username, password);
+      await loginFn();
       await validateInvalidLoginFn();
     } catch (error) {
       ErrorHandler.captureError(

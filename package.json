@@ -38,7 +38,14 @@
     "lint": "eslint . --ext .ts,.js",
     "lint-check": "npm run type-check && npm run lint",
     "pretest:encryption": "npm run lint-check",
-    "test:encryption": "npx playwright test tests/encryption"
+    "pretest:ui": "npm run lint-check",
+    "test:encryption": "npx playwright test tests/encryption",
+    "test:ui": "npx playwright test tests/ui",
+    "test:failed": "npx playwright test --last-failed",
+    "ui": "npx playwright test --ui",
+    "record": "npx playwright codegen",
+    "debug": "npx playwright test --debug",
+    "report": "npx playwright show-report"
   },
   "lint-staged": {
     "*.{ts,js}": [

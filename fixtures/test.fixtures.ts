@@ -13,6 +13,10 @@ import { CryptoService } from "../src/cryptography/service/cryptoService.js";
 import { CryptoCoordinator } from "../src/cryptography/service/cryptoCoordinator.js";
 
 import { RuntimeEnvVariableResolver } from "../src/config/environment/runtimeVariableResolver/runtimeEnvVariableResolver.js";
+import { AuthenticationStatePersister } from "../src/config/authentication/state/internal/authenticationStatePersister.js";
+import { LoginOrchestrator } from "../src/config/authentication/state/loginOrchestrator.js";
+import { LoginPage } from "../src/layers/ui/pages/loginPage.js";
+import { SideBarMenu } from "../src/layers/ui/pages/sideBarMenu.js";
 
 type TestFixtures = {
   /**
@@ -33,10 +37,30 @@ type TestFixtures = {
   cryptoService: CryptoService;
   cryptoCoordinator: CryptoCoordinator;
 
-  runtimeEnvVariableResolver: RuntimeEnvVariableResolver;
+  runtimeResolver: RuntimeEnvVariableResolver;
+
+  authStatePersister: AuthenticationStatePersister;
+  loginOrchestrator: LoginOrchestrator;
+  loginPage: LoginPage;
+  sideBarMenu: SideBarMenu;
 };
 
 export const test = baseTest.extend<TestFixtures>({
+  /**
+   * Zooms the page to a scale of 0.70 when it loads.
+   * Ignores pages that cannot be zoomed.
+   */
+  page: async ({ page }, use) => {
+    page.on("load", async () => {
+      try {
+        await page.evaluate(() => {
+          document.body.style.zoom = "0.70";
+        });
+      } catch {}
+    });
+
+    await use(page);
+  },
   shouldSaveAuthenticationState: [true, { option: true }],
   testInfo: async ({}, use, testInfo: TestInfo) => {
     await use(testInfo);
@@ -65,8 +89,24 @@ export const test = baseTest.extend<TestFixtures>({
     await use(new CryptoCoordinator(environmentFileEncryptor));
   },
 
-  runtimeEnvVariableResolver: async ({}, use) => {
+  runtimeResolver: async ({}, use) => {
     await use(new RuntimeEnvVariableResolver());
+  },
+
+  authStatePersister: async ({ page }, use) => {
+    await use(new AuthenticationStatePersister(page));
+  },
+
+  loginOrchestrator: async ({ page, runtimeResolver, authStatePersister }, use) => {
+    await use(new LoginOrchestrator(page, runtimeResolver, authStatePersister));
+  },
+
+  loginPage: async ({ page }, use) => {
+    await use(new LoginPage(page));
+  },
+
+  sideBarMenu: async ({ page }, use) => {
+    await use(new SideBarMenu(page));
   },
 
   /**
