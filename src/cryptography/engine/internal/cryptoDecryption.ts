@@ -1,6 +1,5 @@
 import type * as crypto from "crypto";
 import CryptoWebOperations from "./cryptoWebOperations.js";
-//import CryptoHmac from "./cryptoHmac.js";
 import { CRYPTO_CONSTANTS } from "../../types/crypto.config.js";
 import CryptoValidation from "./cryptoValidation.js";
 import { FileEncoding } from "../../../utils/fileManager/internal/file-encoding.enum.js";
@@ -20,7 +19,7 @@ export default class CryptoDecryption {
     cipherText: string,
     receivedHmac: string,
   ): void {
-    const expectedParts = CRYPTO_CONSTANTS.FORMAT.EXPECTED_PARTS + 1;
+    const expectedParts = CRYPTO_CONSTANTS.FORMAT.EXPECTED_PARTS;
 
     if (!encryptedData.startsWith(CRYPTO_CONSTANTS.FORMAT.PREFIX)) {
       ErrorHandler.logAndThrow(

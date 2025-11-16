@@ -19,7 +19,7 @@ export default class CryptoValidation {
         .split(CRYPTO_CONSTANTS.FORMAT.SEPARATOR);
 
       // Now expect version + 4 parts = 5
-      if (parts.length !== CRYPTO_CONSTANTS.FORMAT.EXPECTED_PARTS + 1) return false;
+      if (parts.length !== CRYPTO_CONSTANTS.FORMAT.EXPECTED_PARTS) return false;
 
       const [version, ...cryptoParts] = parts;
       if (version !== CRYPTO_CONSTANTS.FORMAT.VERSION) return false;
