@@ -1,8 +1,8 @@
-# Playwright (PW) Automation Framework Codebase
+# ORANGE HRM UI Automation Framework
 
 ## Overview
 
-The **Playwright Automation Framework** is a **TypeScript-based**, production-ready testing solution designed to support scalable UI, API, and end-to-end automation across applications.
+The **OHRM UI Automation Framework** is a **Playwright** and **TypeScript**–based end-to-end testing solution designed to validate the core UI features and workflows of the **OrangeHRM** demo application.
 
 It provides a clean and maintainable structure using the **Page Object Model**, along with reusable utilities, custom fixtures, and CI/CD integration. The framework ensures reliable execution, streamlined test development, and long-term extensibility for enterprise-grade automation needs.
 
