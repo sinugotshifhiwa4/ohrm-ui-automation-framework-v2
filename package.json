@@ -54,7 +54,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sinugotshifhiwa4/pw-automation-framework-codebase.git"
+    "url": "git+https://github.com/sinugotshifhiwa4/ohrm-ui-automation-framework-v2.git"
   },
   "keywords": [
     "playwright",
@@ -66,13 +66,14 @@
     "regression",
     "cryptography",
     "logging",
-    "report"
+    "report",
+    "orangehrm"
   ],
   "author": "Tshifhiwa Sinugo",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/sinugotshifhiwa4/pw-automation-framework-codebase/issues"
+    "url": "https://github.com/sinugotshifhiwa4/ohrm-ui-automation-framework-v2/issues"
   },
-  "homepage": "https://github.com/sinugotshifhiwa4/pw-automation-framework-codebase#readme"
+  "homepage": "https://github.com/sinugotshifhiwa4/ohrm-ui-automation-framework-v2#readme"
 }

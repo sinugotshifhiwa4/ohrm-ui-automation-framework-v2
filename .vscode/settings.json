@@ -30,7 +30,9 @@
     "Tshifhiwa",
     "uncolorize",
     "VaapiVideoDecoder",
-    "viewports"
+    "viewports",
+    "OHRM",
+    "orangehrm"
   ],
   "cSpell.ignorePaths": [
     "node_modules/**",
