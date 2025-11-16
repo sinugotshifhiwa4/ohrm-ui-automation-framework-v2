@@ -1,5 +1,5 @@
 import path from "path";
-import { LoggerConfig, LogLevels, LogFilePaths } from "./types/logger.type.js";
+import type { LoggerConfig, LogLevels, LogFilePaths } from "./types/logger.type.js";
 
 /**
  * Winston logger settings for consistent log handling across the application.

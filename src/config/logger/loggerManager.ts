@@ -1,4 +1,4 @@
-import winston from "winston";
+import type winston from "winston";
 import WinstonLoggerFactory from "./internal/loggerFactory.js";
 
 /**

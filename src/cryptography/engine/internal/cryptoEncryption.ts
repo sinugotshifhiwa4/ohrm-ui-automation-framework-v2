@@ -1,4 +1,4 @@
-import * as crypto from "crypto";
+import type * as crypto from "crypto";
 import SecureKeyGenerator from "../../key/secureKeyGenerator.js";
 import CryptoArgon2 from "./cryptoArgon2.js";
 import CryptoEnvironment from "./cryptoEnvironment.js";

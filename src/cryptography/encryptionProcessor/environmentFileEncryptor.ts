@@ -1,7 +1,7 @@
 import StagesFileManager from "../../config/environment/manager/stagesFileManager.js";
 import EnvironmentConfigManager from "../../config/environment/manager/environmentConfigManager.js";
-import { EncryptionVariableResolver } from "./internal/encryptionVariableResolver.js";
-import { VariableEncryptionExecutor } from "./internal/variableEncryptionExecutor.js";
+import type { EncryptionVariableResolver } from "./internal/encryptionVariableResolver.js";
+import type { VariableEncryptionExecutor } from "./internal/variableEncryptionExecutor.js";
 import ErrorHandler from "../../utils/errorHandling/errorHandler.js";
 import logger from "../../config/logger/loggerManager.js";
 

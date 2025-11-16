@@ -1,5 +1,5 @@
 import * as argon2 from "argon2";
-import * as crypto from "crypto";
+import type * as crypto from "crypto";
 import CryptoValidation from "./cryptoValidation.js";
 import CryptoWebOperations from "./cryptoWebOperations.js";
 import { CRYPTO_CONFIG } from "../../types/crypto.config.js";

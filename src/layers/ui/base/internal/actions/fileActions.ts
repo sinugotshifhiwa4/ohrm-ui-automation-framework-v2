@@ -2,7 +2,7 @@ import type { Page, Locator, Download } from "@playwright/test";
 import { ActionBase } from "./actionBase.js";
 import { AsyncFileManager } from "../../../../../utils/fileManager/asyncFileManager.js";
 import fs from "fs";
-import { ElementActions } from "./elementActions.js";
+import type { ElementActions } from "./elementActions.js";
 import type { FileUploadMethod } from "../types/actions.type.js";
 import ErrorHandler from "../../../../../utils/errorHandling/errorHandler.js";
 

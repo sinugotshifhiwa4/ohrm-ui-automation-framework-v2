@@ -1,7 +1,7 @@
 import type { Page, Frame, Locator, FrameLocator } from "@playwright/test";
 import { ActionBase } from "./actionBase.js";
-import { ElementActions } from "./elementActions.js";
-import { ElementAssertions } from "./elementAssertions.js";
+import type { ElementActions } from "./elementActions.js";
+import type { ElementAssertions } from "./elementAssertions.js";
 
 export class FrameActions extends ActionBase {
   private elementActions: ElementActions;

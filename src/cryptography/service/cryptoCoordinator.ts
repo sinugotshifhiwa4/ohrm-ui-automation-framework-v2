@@ -1,5 +1,5 @@
 import SecureKeyGenerator from "../key/secureKeyGenerator.js";
-import { EnvironmentFileEncryptor } from "../encryptionProcessor/environmentFileEncryptor.js";
+import type { EnvironmentFileEncryptor } from "../encryptionProcessor/environmentFileEncryptor.js";
 import EnvironmentConfigManager from "../../config/environment/manager/environmentConfigManager.js";
 import SecretFileManager from "../../config/environment/manager/secretFileManager.js";
 import ErrorHandler from "../../utils/errorHandling/errorHandler.js";

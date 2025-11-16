@@ -1,10 +1,10 @@
-import { NavigationActions } from "../actions/navigationActions.js";
-import { ElementActions } from "../actions/elementActions.js";
-import { ElementAssertions } from "../actions/elementAssertions.js";
-import { BrowserActions } from "../actions/browserActions.js";
-import { FrameActions } from "../actions/frameActions.js";
-import { FileActions } from "../actions/fileActions.js";
-import { Utilities } from "../utilities.js";
+import type { NavigationActions } from "../actions/navigationActions.js";
+import type { ElementActions } from "../actions/elementActions.js";
+import type { ElementAssertions } from "../actions/elementAssertions.js";
+import type { BrowserActions } from "../actions/browserActions.js";
+import type { FrameActions } from "../actions/frameActions.js";
+import type { FileActions } from "../actions/fileActions.js";
+import type { Utilities } from "../utilities.js";
 
 /**
  * Interface for page actions

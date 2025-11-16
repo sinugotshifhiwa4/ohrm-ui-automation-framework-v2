@@ -1,4 +1,4 @@
-import * as crypto from "crypto";
+import type * as crypto from "crypto";
 import CryptoWebOperations from "./cryptoWebOperations.js";
 //import CryptoHmac from "./cryptoHmac.js";
 import { CRYPTO_CONSTANTS } from "../../types/crypto.config.js";

@@ -11,7 +11,7 @@ export type CryptoType = "salt" | "secretKey" | "iv" | "random";
 /**
  * Type representing a Node.js CryptoKey
  */
-export type NodeCryptoKey = import("crypto").webcrypto.CryptoKey;
+export type NodeCryptoKey = CryptoKey;
 
 /**
  * Options interface for unified cryptographic value generation
