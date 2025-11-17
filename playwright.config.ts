@@ -34,7 +34,7 @@ export default defineConfig({
    */
   reporter: isCI
     ? [["blob", { outputDir: "blob-report", alwaysReport: true }]]
-    : [["html", { open: "never" }], ["line"]],
+    : [["html", { open: "always" }], ["line"]],
   /**
    * The `grep` option enables running tests by tag or keyword.
    * You can set the `PLAYWRIGHT_GREP` environment variable (e.g., `@regression`, `@sanity`) to filter which tests run.
