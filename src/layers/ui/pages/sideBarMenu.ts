@@ -1,6 +1,6 @@
 import { type Page, type Locator, expect } from "@playwright/test";
 import { BasePage } from "../base/basePage.js";
-import type { SidebarMenuOptions } from "./types/pages.type.js";
+import type { SidebarMenuOptions } from "./types/menu.type.js";
 import ErrorHandler from "../../../utils/errorHandling/errorHandler.js";
 import logger from "../../../config/logger/loggerManager.js";
 

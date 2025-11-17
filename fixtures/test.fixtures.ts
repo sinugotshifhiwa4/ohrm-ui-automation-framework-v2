@@ -17,6 +17,7 @@ import { AuthenticationStatePersister } from "../src/config/authentication/state
 import { LoginOrchestrator } from "../src/config/authentication/state/loginOrchestrator.js";
 import { LoginPage } from "../src/layers/ui/pages/loginPage.js";
 import { SideBarMenu } from "../src/layers/ui/pages/sideBarMenu.js";
+import { TopBarMenu } from "../src/layers/ui/pages/topBarMenu.js";
 
 type TestFixtures = {
   /**
@@ -43,6 +44,7 @@ type TestFixtures = {
   loginOrchestrator: LoginOrchestrator;
   loginPage: LoginPage;
   sideBarMenu: SideBarMenu;
+  topBarMenu: TopBarMenu;
 };
 
 export const test = baseTest.extend<TestFixtures>({
@@ -107,6 +109,10 @@ export const test = baseTest.extend<TestFixtures>({
 
   sideBarMenu: async ({ page }, use) => {
     await use(new SideBarMenu(page));
+  },
+
+  topBarMenu: async ({ page }, use) => {
+    await use(new TopBarMenu(page));
   },
 
   /**

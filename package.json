@@ -43,7 +43,7 @@
     "test:ui": "npx playwright test tests/ui",
     "test:failed": "npx playwright test --last-failed",
     "ui": "npx playwright test --ui",
-    "record": "npx playwright codegen",
+    "codegen": "npx playwright codegen",
     "debug": "npx playwright test --debug",
     "report": "npx playwright show-report"
   },
